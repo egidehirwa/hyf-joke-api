@@ -35,7 +35,7 @@ section {
 .container {
     background-color: var(--clr-primary);
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 25px 0px 25px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,6 +47,13 @@ section {
     height: 400px;
     min-height: 400px;
     box-shadow: 15px 15px 0 var(--clr-secondary);
+    position: relative;
+}
+
+.emoji {
+    font-size: 4em;
+    position: absolute;
+    top: -40px;
 }
 
 button {
@@ -65,14 +72,6 @@ button {
         box-shadow: 2px 2px 5px #42cee761;
     }
 }
-
-/* 
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-} 
-*/
 
 .category {
     font-size: 2rem;

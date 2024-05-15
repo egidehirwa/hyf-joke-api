@@ -18,7 +18,13 @@ const createJoke = (jokeData) => {
     type.id = jokeData.id;
     type.innerText = jokeData.type;
 
-    container.append(category, type);
+    //Create Emoji
+    const emoji = document.createElement('div');
+    emoji.classList.add('emoji');
+    emoji.innerText = '😂';
+
+
+    container.append(category, type, emoji);
 
     // Check type - if single or twopart
     if(jokeData.type === 'twopart') {
@@ -66,12 +72,13 @@ const createJoke = (jokeData) => {
     // Create safe
     const safe = document.createElement('p');
     safe.id = 'safe';
-    safe.innerText = 'Safe';
 
     if (jokeData.safe){
         safe.classList.add('safe');
+        safe.innerText = 'Can be told to anyone 😉';
     } else {
         safe.classList.add('unsafe');
+        safe.innerText = 'Might be a little risqué 👀';
     }
 
     container.append(flags, lang, safe);

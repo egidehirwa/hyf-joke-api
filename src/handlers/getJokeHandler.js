@@ -5,7 +5,7 @@ import createJoke from "../components/createJoke.js";
 const getJokeHandler = async () => {
     // Joke data
     const jokeData = await getJoke();
-
+    dom.btn.innerText = 'Generate another random joke';
     // Create dom components
     const jokeDom = createJoke(jokeData);
 
