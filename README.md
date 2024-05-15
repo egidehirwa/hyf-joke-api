@@ -1,27 +1,20 @@
 # Image gallery
 
-> Describe the project ...
+> This is a mini app that generates random jokes from an api.
 
-![Project screenshot]()
+![Project screenshot](./assets/joke-generator-screenshot.png)
 
 ## Table of contents
 
 - [General info](#general-info)
-- [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Features](#features)
 - [Status](#status)
-- [Inspiration](#inspiration)
-- [Contact](#contact)
 
 ## General info
 
-> The objective of the project is ...
-
-## Screenshots
-
-![Example screenshot]()
+> The objective of the project is to fetch random jokes from an api and display them on the DOM.
 
 ## Technologies
 
@@ -37,26 +30,34 @@
 ## Code Examples
 
 ```js
+const getJoke = async () => {
+    try {
+        const res = await fetch('https://v2.jokeapi.dev/joke/Any');
 
+        if(res.ok){
+            const data = await res.json();
+            return data;
+        } else {
+            throw new Error ('Failed to fetch joke.')
+        }
+    } catch (error) {
+        console.lot(error);
+    }
+}
+
+export default getJoke;
 ```
 
 ## Features
 
 List of features ready and Todos for future development
 
--
--
--
+- Display of joke categories
 
 To-do list:
 
--
--
+- Favorite the best jokes
 
 ## Status
 
-Project is: _in progress_
-
-## Inspiration
-
-## Contact
+Project is: _completed_
